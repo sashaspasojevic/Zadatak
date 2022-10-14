@@ -1,0 +1,96 @@
+@import "mixins";
+
+.about {
+  display: flex;
+  height: 640px;
+  @include breakpoint(tablet) {
+    display: block;
+    height: fit-content;
+  }
+  @include breakpoint(phone) {
+    display: block;
+    height: fit-content;
+    margin-top: 0;
+  }
+
+  .about_img {
+    flex: 0 0 50%;
+    background-image: url(../img/Images/about-us-section.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(phone) {
+      background-size: 90%;
+    }
+
+    .about_rectangle {
+      background: $coloRectangle;
+      height: 520px;
+      width: 360px;
+      z-index: -2;
+      display: flex;
+      align-items: flex-end;
+
+      p {
+        margin-left: 10px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  article {
+    flex: 0 0 50%;
+    padding: 60px 0;
+    @include breakpoint(tablet) {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    @include breakpoint(phone) {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    h3 {
+      color: $fontColorRed;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    h2 {
+      color: black;
+      font-size: 2rem;
+      max-width: 320px;
+      margin: 20px 0 40px;
+      @include breakpoint(tablet) {
+        max-width: unset;
+      }
+      @include breakpoint(phone) {
+        max-width: unset;
+      }
+    }
+
+    .about_p1 {
+      font-size: 1.2rem;
+      max-width: 430px;
+      margin-bottom: 25px;
+      @include breakpoint(tablet) {
+        max-width: unset;
+      }
+      @include breakpoint(phone) {
+        max-width: unset;
+      }
+    }
+
+    .about_p2 {
+      max-width: 445px;
+      @include breakpoint(tablet) {
+        max-width: unset;
+      }
+      @include breakpoint(phone) {
+        max-width: unset;
+      }
+    }
+  }
+}

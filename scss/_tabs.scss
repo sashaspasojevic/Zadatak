@@ -1,0 +1,141 @@
+@import "var";
+@import "mixins";
+
+.tabs {
+  h2 {
+    text-align: center;
+    color: $coloBlack;
+    margin-bottom: 50px;
+    font-size: 2rem;
+  }
+  .tabs_group {
+    display: flex;
+    justify-content: center;
+    @include breakpoint (phone) {
+      display: block;
+    }
+  }
+
+  .tabs_tablink {
+    background-color: #fff;
+    color: $fontColor;
+    border: 3px solid transparent;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 0;
+    width: 14%;
+    transition: $transition;
+    @include breakpoint(phone) {
+      display: block;
+      margin: 10px auto;
+    }
+    &:hover {
+      color: $btnBacground;
+    }
+  }
+
+  .tabs_tablink.active {
+    border-bottom: 3px solid $fontColorRed;
+  }
+
+  .tabs_tabcontent {
+    padding-top: 70px;
+    // text-align: center;
+    display: none;
+  }
+
+  .svg {
+    width: 15px;
+    display: inline-block;
+  }
+}
+
+.tabs_tabcontent.active {
+  display: block;
+}
+
+/**article**/
+
+.tabs_AllAricles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint(tablet) {
+    flex-wrap: wrap;
+  }
+  @include breakpoint(phone) {
+    flex-wrap: wrap;
+  }
+  // margin-top: 70px;
+
+  .tabs_article {
+    flex: 0 0 23%;
+    position: relative;
+    @include breakpoint(tablet) {
+      flex: 0 0 46%;
+    }
+
+    @include breakpoint(phone) {
+      flex: 0 0 100%;
+      padding: 40px 15px;
+    }
+
+.tabs_article-new {
+  background-color: $colorSpanNew;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+
+    .tabs_article-header {
+      text-align: center;
+      padding: 15px;
+      img {
+        margin-bottom: 20px;
+      }
+      h3 {
+        color: $coloBlack;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .tabs_article-text {
+    line-height: 2rem;
+    margin-top: 25px;
+  }
+
+  .tabs_article-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    p {
+      display: flex;
+      flex-direction: column;
+      span {
+        color: $coloBlack;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+    .tabs_article-btn {
+      background-color: $coloBtn;
+      color: $fontColorRed;
+      border: 1px solid transparent;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        border: 1px solid $fontColorRed;
+        background: transparent;
+      }
+    }
+  }
+}

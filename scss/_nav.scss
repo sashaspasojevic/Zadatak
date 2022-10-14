@@ -1,0 +1,126 @@
+@import "var";
+@import "hamburger";
+@import "mixins";
+
+nav {
+  background-color: $coloBlack;
+  padding: 2rem 2rem 0;
+  @include verySmall {
+    background-color: $coloRectangle;
+  }
+  
+  @include breakpoint (phone){
+    padding: .5rem 2rem 0;
+  }
+
+   
+
+  .nav_header {
+    @include breakpoint(phone) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      .nav_btn {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .nav_logo {
+    height: 35px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include breakpoint(phone) {
+    display: block;
+  }
+  .nav_btn {
+    display: none;
+    @include breakpoint(phone) {
+      display: block;
+    }
+  }
+
+  
+
+  .nav_links {
+    display: flex;
+    align-items: center;
+    @include breakpoint(phone) {
+      display: block;
+      margin-top: 20px;
+      height: 0;
+      overflow: hidden;
+      transition: $transition;
+     
+    }
+    
+    .activeLink {
+      border-bottom: 3px solid $fontColorRed;
+    }
+    a {
+      display: block;
+      text-transform: uppercase;
+      padding: 14px 16px;
+      border-bottom: 3px solid transparent;
+      @include breakpoint(phone) {
+        &:hover {
+          border-bottom: 3px solid $fontColorRed !important;
+          color: $fontWhite !important;
+        }
+      }
+    }
+    .nav_links-li:not(:last-child) a:hover {
+      border-bottom: 3px solid $fontColorRed !important;
+      color: $fontWhite !important;
+    }
+    .dropdown {
+      display: inline-block;
+      &:hover .dropdown_content {
+        display: block;
+      }
+    }
+    .dropdown_content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      background-color: $btnBacground;
+      z-index: 1;
+      border-right: 1px solid $fontColorDarker;
+      border-left: 1px solid $fontColorDarker;
+      border-bottom: 1px solid $fontColorDarker;
+      border-top: 3px solid $fontColorRed;
+      padding: 15px;
+      margin-top: -3px;
+      @include breakpoint(phone) {
+        min-width: unset;
+        width: 90%;
+      }
+      a {
+        color: $fontWhite;
+        text-align: left;
+        font-size: 0.85rem;
+        display: block;
+        padding: 12px 16px 12px 0;
+        &:not(:last-child) {
+          border-bottom: 3px solid $fontColorDarker;
+        }
+      }
+    }
+  }
+
+  .nav_links-lighter {
+    background: $btnBacground;
+    @include breakpoint(phone) {
+      background: unset;
+    }
+    &:hover {
+      background: $fontColorRed;
+      @include breakpoint(phone) {
+        background: unset;
+      }
+    }
+  }
+}

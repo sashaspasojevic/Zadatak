@@ -1,0 +1,59 @@
+@import "var";
+@import 'mixins';
+
+.nav_btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+       
+}
+
+.nav_btn-burger {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+}
+
+.nav_btn-burger::before,
+.nav_btn-burger::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        border-radius: 3px;
+        transition: all 0.5s ease-in-out;
+}
+
+.nav_btn-burger::before {
+        transform: translateY(-8px);
+}
+
+.nav_btn-burger::after {
+        transform: translateY(8px);
+}
+
+/* animation */
+
+/* ANIMATION */
+.nav_btn.open .nav_btn-burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+}
+
+.nav_btn.open .nav_btn-burger::before {
+        transform: rotate(45deg) translate(35px, -35px);
+}
+
+.nav_btn.open .nav_btn-burger::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+}
+

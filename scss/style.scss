@@ -1,0 +1,21 @@
+@import "var";
+@import "global";
+@import "mixins";
+@import "nav";
+@import "slider";
+@import "about";
+@import "featured";
+@import "tabs";
+@import "modal";
+@import "contact";
+
+
+$fontColor: #c4c4c4;
+$fontColorDarker: #6a6a6a;
+$fontColorRed: #ba1f1f;
+$fontFamily: "Poppins", sans-serif;
+
+body {
+  font-family: $fontFamily;
+  color: $fontColor;
+}

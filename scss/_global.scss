@@ -1,0 +1,133 @@
+@import "var";
+@import "mixins";
+
+// /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  // font-family: $fontFamily;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  width: 100%;
+  display: block;
+}
+
+
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  @include breakpoint(tablet) {
+    width: 90%;
+  }
+  @include breakpoint(phone) {
+    width: 95%;
+  }
+}
+
+.py {
+  padding: 60px 0;
+
+  @media (max-width: 1300px) {
+    padding: 40px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+}
+
+.btn {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  border: 1px solid blue;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 30px;
+  overflow: hidden;
+  margin: 10px 0;
+  border-radius: 3px;
+  cursor: pointer;
+  // transition: $transition;
+  &:hover {
+    color: white;
+    background-color: orchid;
+    border: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
